@@ -1,5 +1,5 @@
 require('/css/index.less');
 
 $(function() {
-	console.log('init');
+	$("body").height(document.documentElement.clientHeight).width(document.documentElement.clientWidth);
 })
