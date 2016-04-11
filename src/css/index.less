@@ -29,6 +29,16 @@ body{
 		.rem(height, 1065rem);
 		background:url('/img/big_circle.png') 0 0 no-repeat;
 		background-size: 100% 100%;
+		.big-ball{
+			.rem(width, 121rem);
+			.rem(height, 121rem);
+			background:url('/img/big_ball.png') 0 0 no-repeat;
+			background-size:100% 100%;
+			position: absolute;
+			left:50%;
+			.rem(margin-left, -60rem);
+			.rem(top, 45rem);
+		}
 	}
 	.big-circle-high{
 		position: absolute;
@@ -49,6 +59,16 @@ body{
 		.rem(height, 709rem);
 		background:url('/img/mid_circle.png') 0 0 no-repeat;
 		background-size: 100% 100%;
+		.mid-ball{
+			.rem(width, 108rem);
+			.rem(height, 107rem);
+			background:url('/img/mid_ball.png') 0 0 no-repeat;
+			background-size:100% 100%;
+			position: absolute;
+			left:50%;
+			.rem(margin-left, -54rem);
+			.rem(top, 15rem);
+		}
 	}
 	.mid-circle-high{
 		position: absolute;
@@ -69,6 +89,16 @@ body{
 		.rem(height, 459rem);
 		background:url('/img/small_circle.png') 0 0 no-repeat;
 		background-size: 100% 100%;
+		.small-ball{
+			.rem(width, 92rem);
+			.rem(height, 92rem);
+			background:url('/img/mid_ball.png') 0 0 no-repeat;
+			background-size:100% 100%;
+			position: absolute;
+			left:50%;
+			.rem(margin-left, -46rem);
+			.rem(top, 30rem);
+		}
 	}
 	.small-circle-high{
 		position: absolute;
@@ -90,6 +120,17 @@ body{
 		background:url('/img/search.png') 0 0 no-repeat;
 		background-size: 100% 100%;
 	}
+	.light{
+		position: absolute;
+		left:50%;
+		top:0;
+		transform: translate(-50%, 0);
+		.rem(width, 426rem);
+		.rem(height, 537rem);
+		background:url('/img/light.png') 0 0 no-repeat;
+		background-size:100% 100%;
+		opacity: .7;
+	}
 }
 .shutdown{
 	position: absolute;
@@ -105,14 +146,8 @@ body{
 	left:50%;
 	transform:translate(-50%,0);
 	.rem(bottom, 200rem);
-	.rem(width, 252rem);
+	.rem(width, 247rem);
 	.rem(height, 78rem);
-	text-align: center;
-	.rem(line-height, 78rem);
-	border-radius: 39px;
-	background: #00FFFF;
-	color:#000;
-	font-family: "微软雅黑";
-	font-size:32px;
-	font-weight: bold;
+	background: url('/img/go_find.png') 0 0 no-repeat;
+	background-size:100% 100%;
 }
