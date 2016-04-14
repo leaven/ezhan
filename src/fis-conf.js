@@ -48,6 +48,21 @@ fis.match('::package', {
     })
 })
 
+//tmpl、tpl作为js模板，直接Inline到js中，不需要发布
+fis.match('*.tmpl', {
+      parser: fis.plugin('utc'),
+      isJsLike: true,
+      release: false
+    })
+    .match('*.tpl', {
+      release: false
+    })
+    .match('*.inline.less', {
+      release: false
+    })
+    .match('*.md', {
+      release: false
+    })
 /**********************生产环境下CSS、JS压缩合并*****************/
 //发布上线的时候进行压缩合并js、css
 fis.media('prod')
