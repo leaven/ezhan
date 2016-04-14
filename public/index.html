@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>e栈</title>
+	<meta name="viewport" content="user-scalable=no,initial-scale=1,width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="e栈">
+	<link rel="stylesheet" href="//leavenfe.com/ezhan/public/css/reset.css" />
+	<script src="//leavenfe.com/ezhan/public/lib/mod_c630892.js"></script>
+
+	<script src="//leavenfe.com/ezhan/public/lib/flexible_d792e06.js"></script>
+	<script src="//leavenfe.com/ezhan/public/lib/zepto_8fd7ee5.js"></script>
+	<title>E栈</title>
+
+    <link rel="stylesheet" type="text/css" href="//leavenfe.com/ezhan/public/css/index.css" />
+</head>
+<body>
+	<div class="logo">
+		<img class="logo-img" src="//leavenfe.com/ezhan/public/img/logo_35fc636.png" />
+		<p class="logo-title"><img src="//leavenfe.com/ezhan/public/img/logo_title_2ee4e01.png" /></p>
+	</div>
+	<div class="dial">
+		<div class="big-circle">
+			<div class="big-ball"></div>
+			<div class="big-ball big-ball1"></div>
+			<div class="big-ball big-ball2"></div>
+			<div class="big-ball big-ball3"></div>
+			<div class="big-ball big-ball4"></div>
+			<div class="big-ball big-ball5"></div>
+		</div>
+		<div class="big-circle-high"></div>
+		<div class="mid-circle">
+			<div class="mid-ball"></div>
+			<div class="mid-ball mid-ball1"></div>
+			<div class="mid-ball mid-ball2"></div>
+			<div class="mid-ball mid-ball3"></div>
+			<div class="mid-ball mid-ball4"></div>
+			<div class="mid-ball mid-ball5"></div>
+		</div>
+		<div class="mid-circle-high"></div>
+		<div class="small-circle">
+			<div class="small-ball"></div>
+			<div class="small-ball small-ball1"></div>
+			<div class="small-ball small-ball2"></div>
+			<div class="small-ball small-ball3"></div>
+			<div class="small-ball small-ball4"></div>
+			<div class="small-ball small-ball5"></div>
+		</div>
+		<div class="small-circle-high"></div>
+		<div class="light"></div>
+		<div class="search"></div>
+	</div>
+	<div class="shutdown"></div>
+	<div class="go-find"></div>
+ 	<script>require.resourceMap({
+    "res": {
+        "css/csslib.less": {
+            "uri": "//leavenfe.com/ezhan/public/css/csslib.css",
+            "type": "css"
+        },
+        "css/index.less": {
+            "uri": "//leavenfe.com/ezhan/public/css/index.css",
+            "type": "css"
+        },
+        "css/reset.less": {
+            "uri": "//leavenfe.com/ezhan/public/css/reset.css",
+            "type": "css"
+        },
+        "fis-conf.js": {
+            "uri": "//leavenfe.com/ezhan/public/fis-conf_e164963.js",
+            "type": "js"
+        },
+        "lib/mod.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/mod_c630892.js",
+            "type": "js"
+        },
+        "lib/flexible.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/flexible_d792e06.js",
+            "type": "js"
+        },
+        "lib/zepto/zepto.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/zepto_538de9f.js",
+            "type": "js"
+        },
+        "lib/zepto/ajax.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/ajax_322d389.js",
+            "type": "js"
+        },
+        "lib/zepto/event.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/event_b423e17.js",
+            "type": "js"
+        },
+        "lib/zepto/data.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/data_54f760b.js",
+            "type": "js"
+        },
+        "lib/zepto.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto_8fd7ee5.js",
+            "type": "js"
+        },
+        "js/init.js": {
+            "uri": "//leavenfe.com/ezhan/public/static/js/_184be87.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "js/init"
+            },
+            "deps": [
+                "css/index.less"
+            ]
+        },
+        "lib/zepto/assets.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/assets_04f511e.js",
+            "type": "js"
+        },
+        "lib/zepto/callbacks.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/callbacks_1426dbc.js",
+            "type": "js"
+        },
+        "lib/zepto/cookie.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/cookie_1e87ada.js",
+            "type": "js"
+        },
+        "lib/zepto/deferred.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/deferred_99c181c.js",
+            "type": "js"
+        },
+        "lib/zepto/detect.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/detect_a93d44d.js",
+            "type": "js"
+        },
+        "lib/zepto/form.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/form_b28cca5.js",
+            "type": "js"
+        },
+        "lib/zepto/fx_methods.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/fx_methods_2aabbf9.js",
+            "type": "js"
+        },
+        "lib/zepto/fx.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/fx_9921ea0.js",
+            "type": "js"
+        },
+        "lib/zepto/gesture.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/gesture_cfb140d.js",
+            "type": "js"
+        },
+        "lib/zepto/ie.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/ie_37d0608.js",
+            "type": "js"
+        },
+        "lib/zepto/ios3.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/ios3_1ad93e0.js",
+            "type": "js"
+        },
+        "lib/zepto/selector.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/selector_e63eb7c.js",
+            "type": "js"
+        },
+        "lib/zepto/stack.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/stack_8470d4a.js",
+            "type": "js"
+        },
+        "lib/zepto/touch.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/touch_682a21e.js",
+            "type": "js"
+        }
+    },
+    "pkg": {}
+})</script>
+    <script type="text/javascript" src="//leavenfe.com/ezhan/public/static/js/_184be87.js"></script>
+	<script>
+		require('js/init')
+	</script>
+</body>
+</html>

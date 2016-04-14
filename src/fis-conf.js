@@ -6,6 +6,7 @@ fis.set('project.ignore', [
   '.git/**',
   '.svn/**'
 ]);
+var domain = '//leavenfe.com/ezhan/public';
 //FIS modjs模块化方案
 fis.hook('commonjs');
 
@@ -46,3 +47,30 @@ fis.match('::package', {
         obtainStyle: false
     })
 })
+
+/**********************生产环境下CSS、JS压缩合并*****************/
+//发布上线的时候进行压缩合并js、css
+fis.media('prod')
+  .match('*.js', {
+    optimizer: fis.plugin('uglify-js'),
+    domain: domain
+  })
+  .match('*.css', {
+    optimizer: fis.plugin('clean-css'),
+    domain: domain
+  })
+  .match('*.less', {
+    optimizer: fis.plugin('clean-css'),
+    domain: domain
+  })
+  .match('*', {
+    domain: domain
+  });
+
+/****************上线配置请勿随便修改******************/
+fis.media('prod')
+  .match('**', {
+    deploy: fis.plugin('local-deliver', {
+      to: '../public'
+    })
+});
