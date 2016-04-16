@@ -3,8 +3,15 @@ require('/css/index.less');
 var Dial = {
 	tpl: __inline('/tpl/ball.tmpl'),
 	init: function() {
-		this.$el = $('.dial');
+		this.$el = $('.dial-circle');
 		this.getData();
+	},
+	bindEvents: function() {
+		this.$el.on("click", '[ball-event="rotate"]', this.rotate);
+	},
+	rotate: function(e) {
+		var $se = $(e.target);
+		console.log($se);
 	},
 	getData: function() {
 		var data = {
@@ -62,10 +69,17 @@ var Dial = {
 		        }
 		      ]
 		}
+
 		this.render(data);
 	},
 	render: function(data) {
-		this.$el.html(this.tpl({data: data}));
+		var classMap = {
+			"first": "big",
+			"second": "mid",
+			"third": "small"
+		}
+		this.$el.html(this.tpl({data: data, classMap: classMap}));
+		this.bindEvents();
 	}
 }
 $(function() {
