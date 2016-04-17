@@ -1,3 +1,4 @@
+
 //根元素font-size*分辨率倍率
 @rootSize:100;
 
@@ -86,4 +87,7 @@
 }
 .rem(background-size, @valueX, @valueY) {
 	background-size: @valueX/@rootSize @valueY/@rootSize;
+}
+.rem(transform-origin, @valueX, @valueY){
+	transform-origin: @valueX/@rootSize @valueY/@rootSize;
 }

@@ -49,6 +49,26 @@ body{
 		background:url('/img/small_circle.png') center center no-repeat;
 		.rem(background-size, 459rem, 459rem);
 	}
+	.big-circle-high{
+		position: absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%, -50%);
+		.rem(width, 921rem);
+		.rem(height, 921rem);
+		background:url('/img/big_circle_high.png') 0 0 no-repeat;
+		background-size: 100% 100%;
+	}
+	.mid-circle-high{
+		position: absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%, -50%);
+		.rem(width, 647rem);
+		.rem(height, 647rem);
+		background:url('/img/mid_circle_high.png') 0 0 no-repeat;
+		background-size: 100% 100%;
+	}
 	.big-circle{
 		position: absolute;
 		.rem(width, 970rem);
@@ -57,27 +77,17 @@ body{
 		left:50%;
 		.rem(margin-left,-485rem);
 		.rem(margin-top,-485rem);
-		// position: absolute;
-		// .rem(width, 1065rem);
-		// .rem(height, 1065rem);
-		// // background:url('/img/big_circle.png') 0 0 no-repeat;
-		// // background-size: 100% 100%;
 		transition:transform 1s ease;
 		.big-ball{
-			// position: absolute;
-			// .rem(width, 970rem);
-			// .rem(height, 970rem);
-			// top:50%;
-			// left:50%;
-			// .rem(margin-left,-485rem);
-			// .rem(margin-top,-485rem);
 			position: absolute;
-			width:100%;
+			.rem(width, 121rem);
 			.rem(height, 121rem);
 			left:50%;
-			.rem(margin-left, 60rem);
+			.rem(margin-left, -60rem);
+			top:0;
 			background:url('/img/big_ball.png') center 0 no-repeat;
 			.rem(background-size, 121rem, 121rem);
+			.rem(transform-origin, 60em, 485rem);
 			.ball-name{
 				font-size:24px;
 				.rem(width, 121rem);
@@ -102,33 +112,26 @@ body{
 			transform:rotateZ(300deg);
 		}
 	}
-	.big-circle-high{
-		position: absolute;
-		left:50%;
-		top:50%;
-		transform:translate(-50%, -50%);
-		.rem(width, 921rem);
-		.rem(height, 921rem);
-		background:url('/img/big_circle_high.png') 0 0 no-repeat;
-		background-size: 100% 100%;
-	}
+	
 	.mid-circle{
 		position: absolute;
-		.rem(width, 1065rem);
-		.rem(height, 1065rem);
-		// background:url('/img/mid_circle.png') center center no-repeat;
-		// .rem(background-size, 709rem, 709rem);
+		.rem(width, 670rem);
+		.rem(height, 670rem);
+		left:50%;
+		top:50%;
+		.rem(margin-left, -335rem);
+		.rem(margin-top, -335rem);
 		transition:transform 1s ease;
 		.mid-ball{
 			position: absolute;
-			.rem(width, 670rem);
-			.rem(height, 670rem);
+			.rem(width, 108rem);
+			.rem(height, 107rem);
 			left:50%;
-			top:50%;
-			.rem(margin-left, -335rem);
-			.rem(margin-top, -335rem);
+			top:0;
+			.rem(margin-left, -54rem);
 			background:url('/img/mid_ball.png') center 0 no-repeat;
 			.rem(background-size, 108rem, 107rem);
+			.rem(transform-origin, 54em, 335rem);
 			.ball-name{
 				font-size:22px;
 				.rem(width, 108rem);
@@ -153,33 +156,25 @@ body{
 			transform:rotateZ(300deg);
 		}
 	}
-	.mid-circle-high{
-		position: absolute;
-		left:50%;
-		top:50%;
-		transform:translate(-50%, -50%);
-		.rem(width, 647rem);
-		.rem(height, 647rem);
-		background:url('/img/mid_circle_high.png') 0 0 no-repeat;
-		background-size: 100% 100%;
-	}
 	.small-circle{
 		position: absolute;
-		.rem(width, 1065rem);
-		.rem(height, 1065rem);
-		// background:url('/img/small_circle.png') center center no-repeat;
-		// .rem(background-size, 459rem, 459rem);
+		.rem(width, 400rem);
+		.rem(height, 400rem);
+		left:50%;
+		top:50%;
+		.rem(margin-left, -200rem);
+		.rem(margin-top, -200rem);
 		transition:transform 1s ease;
 		.small-ball{
 			position: absolute;
-			.rem(width, 400rem);
-			.rem(height, 400rem);
+			.rem(width, 92rem);
+			.rem(height, 92rem);
 			left:50%;
-			top:50%;
-			.rem(margin-left, -200rem);
-			.rem(margin-top, -200rem);
+			top:0;
+			.rem(margin-left, -46rem);
 			background:url('/img/small_ball.png') center 0 no-repeat;
 			.rem(background-size, 92rem, 92rem);
+			.rem(transform-origin, 46rem, 200rem);
 			.ball-name{
 				font-size:16px;
 				.rem(width, 92rem);
@@ -213,6 +208,21 @@ body{
 		.rem(height, 339rem);
 		background:url('/img/small_circle_high.png') 0 0 no-repeat;
 		background-size: 100% 100%;
+	}
+	//高亮状态
+	.high-light{
+		.big-ball{
+			background:url(/img/big_ball_high.png) 0 0 no-repeat;
+			background-size: 100% 100%;
+		}
+		.mid-ball{
+			background:url(/img/mid_ball_high.png) 0 0 no-repeat;
+			background-size: 100% 100%;
+		}
+		.small-ball{
+			background:url(/img/small_ball_high.png) 0 0 no-repeat;
+			background-size: 100% 100%;
+		}
 	}
 	.search{
 		position: absolute;

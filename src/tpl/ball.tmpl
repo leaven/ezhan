@@ -1,8 +1,8 @@
 <%Object.keys(data).forEach(function(v) {%>
-	<div class="<%=classMap[v]%>-circle">
+	<div class="circle <%=classMap[v]%>-circle">
 		<% var perAngel = (360/data[v].length); %>
 		<%data[v].forEach(function(item, index){%>
-			<div class="<%=classMap[v]%>-ball" style="transform:rotateZ(<%=perAngel*index%>deg)" ball-event="rotate">
+			<div class="ball <%=classMap[v]%>-ball" style="transform:rotateZ(<%=perAngel*index%>deg)" ball-event="rotate">
 				<span class="ball-name"  style="transform:rotateZ(-<%=perAngel*index%>deg)"><%=item.name%></span>
 			</div>
 		<%})%>
