@@ -7,7 +7,7 @@ var Dial = {
 		this.getData();
 	},
 	bindEvents: function() {
-		this.$el.on("click", '[ball-event="rotate"]', this.rotate);
+		$(".dial").on("click", '[ball-event="rotate"]', this.rotate);
 	},
 	rotate: function(e) {
 		var $se = $(e.target);
