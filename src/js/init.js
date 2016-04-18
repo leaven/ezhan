@@ -23,18 +23,25 @@ var Dial = {
 	},
 	rotate: function(e) {
 		var $se = $(e.target);
-		if($se.hasClass('ball')) {
+		if(!$se.hasClass('ball')) {
 			$se = $se.parents('.ball');
+		}
+		//如果已经高亮，点击无效
+		if($se.hasClass('high-light')) {
+			return;
 		}
 		$circle = $se.parents('.circle');
 		
 		var deg = this.getRotate($se.css("transform"));
 		var baseDeg = this.getRotate($circle.css("transform"));
-		$(".high-light").removeClass('high-light')
+		$circle.find(".high-light").removeClass('high-light')
 		$circle.addClass('high-light');
-		console.log(this);
-		$circle.css('transform', 'rotateZ('+(baseDeg+this._settings.baseAngle+360-deg)+'deg)');
-		// console.log($circle);
+		$se.addClass('high-light');
+		$circle.css('transform', 'rotateZ('+(baseDeg+this._settings.baseAngle+360-deg)+'deg) scale(1.03)');
+		$circle.on('transitionend', function() {
+			$circle.off('transitionend');
+			$circle.removeClass('high-light');
+		});
 	},
 	search: function() {
 		console.log('search');

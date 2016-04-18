@@ -30,6 +30,9 @@ body{
 		top:0;
 		text-align: center;
 	}
+	.circle{
+		transition:transform 2s cubic-bezier(0.11, 0.45, 0.57, 1);
+	}
 	.big-circle-bg,
 	.mid-circle-bg,
 	.small-circle-bg{
@@ -77,7 +80,6 @@ body{
 		left:50%;
 		.rem(margin-left,-485rem);
 		.rem(margin-top,-485rem);
-		transition:transform 1s ease;
 		.big-ball{
 			position: absolute;
 			.rem(width, 121rem);
@@ -95,21 +97,10 @@ body{
 				.rem(line-height, 121rem);	
 				.rem(margin-left, -60rem);		
 			}
-		}
-		.big-ball1{
-			transform:rotateZ(60deg);
-		}
-		.big-ball2{
-			transform:rotateZ(120deg);
-		}
-		.big-ball3{
-			transform:rotateZ(180deg);
-		}
-		.big-ball4{
-			transform:rotateZ(240deg);
-		}
-		.big-ball5{
-			transform:rotateZ(300deg);
+			&.high-light {
+				background:url('/img/big_ball_high.png') center 0 no-repeat;
+				.rem(background-size, 121rem, 121rem);
+			}
 		}
 	}
 	
@@ -121,7 +112,6 @@ body{
 		top:50%;
 		.rem(margin-left, -335rem);
 		.rem(margin-top, -335rem);
-		transition:transform 1s ease;
 		.mid-ball{
 			position: absolute;
 			.rem(width, 108rem);
@@ -139,21 +129,10 @@ body{
 				.rem(line-height,107rem);
 				.rem(margin-left, -54rem);	
 			}
-		}
-		.mid-ball1{
-			transform:rotateZ(60deg);
-		}
-		.mid-ball2{
-			transform:rotateZ(120deg);
-		}
-		.mid-ball3{
-			transform:rotateZ(180deg);
-		}
-		.mid-ball4{
-			transform:rotateZ(240deg);
-		}
-		.mid-ball5{
-			transform:rotateZ(300deg);
+			&.high-light {
+				background:url('/img/mid_ball_high.png') center 0 no-repeat;
+				.rem(background-size, 108rem, 107rem);
+			}
 		}
 	}
 	.small-circle{
@@ -164,7 +143,6 @@ body{
 		top:50%;
 		.rem(margin-left, -200rem);
 		.rem(margin-top, -200rem);
-		transition:transform 1s ease;
 		.small-ball{
 			position: absolute;
 			.rem(width, 92rem);
@@ -182,21 +160,10 @@ body{
 				.rem(line-height,92rem);	
 				.rem(margin-left, -46rem);	
 			}
-		}
-		.small-ball1{
-			transform:rotateZ(60deg);
-		}
-		.small-ball2{
-			transform:rotateZ(120deg);
-		}
-		.small-ball3{
-			transform:rotateZ(180deg);
-		}
-		.small-ball4{
-			transform:rotateZ(240deg);
-		}
-		.small-ball5{
-			transform:rotateZ(300deg);
+			&.high-light {
+				background:url('/img/small_ball_high.png') center 0 no-repeat;
+				.rem(background-size, 92rem, 92rem);
+			}
 		}
 	}
 	.small-circle-high{
