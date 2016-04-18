@@ -34,7 +34,7 @@ fis.match('**/*.less', {
 fis.match(/^\/js\/init\.js$/, {
     isMod: true,
     useMap: true,
-    release: '${statics}/js/$1.js'
+    release: '${statics}/js/init.js'
 })
 
 fis.match('::package', {
