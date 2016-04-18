@@ -1,1 +1,0 @@
-define("js/init",function(){"";$(function(){$("body").height(window.screen.height).width(window.screen.width)})});

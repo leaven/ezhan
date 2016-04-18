@@ -10,7 +10,7 @@
 	<script src="//leavenfe.com/ezhan/public/lib/mod_c630892.js"></script>
 
 	<script src="//leavenfe.com/ezhan/public/lib/flexible_d792e06.js"></script>
-	<script src="//leavenfe.com/ezhan/public/lib/zepto_8fd7ee5.js"></script>
+	<script src="//leavenfe.com/ezhan/public/lib/zepto_f4a7f5d.js"></script>
 	<title>E栈</title>
 
     <link rel="stylesheet" type="text/css" href="//leavenfe.com/ezhan/public/css/index.css" />
@@ -21,7 +21,14 @@
 		<p class="logo-title"><img src="//leavenfe.com/ezhan/public/img/logo_title_2ee4e01.png" /></p>
 	</div>
 	<div class="dial">
-		<div class="big-circle">
+		<div class="big-circle-bg"></div>
+		<div class="big-circle-high"></div>
+		<div class="mid-circle-bg"></div>
+		<div class="mid-circle-high"></div>
+		<div class="small-circle-bg"></div>
+		<div class="small-circle-high"></div>
+		<div class="light"></div>
+		<!-- <div class="big-circle">
 			<div class="big-ball"></div>
 			<div class="big-ball big-ball1"></div>
 			<div class="big-ball big-ball2"></div>
@@ -29,7 +36,7 @@
 			<div class="big-ball big-ball4"></div>
 			<div class="big-ball big-ball5"></div>
 		</div>
-		<div class="big-circle-high"></div>
+		
 		<div class="mid-circle">
 			<div class="mid-ball"></div>
 			<div class="mid-ball mid-ball1"></div>
@@ -38,7 +45,7 @@
 			<div class="mid-ball mid-ball4"></div>
 			<div class="mid-ball mid-ball5"></div>
 		</div>
-		<div class="mid-circle-high"></div>
+		
 		<div class="small-circle">
 			<div class="small-ball"></div>
 			<div class="small-ball small-ball1"></div>
@@ -46,10 +53,8 @@
 			<div class="small-ball small-ball3"></div>
 			<div class="small-ball small-ball4"></div>
 			<div class="small-ball small-ball5"></div>
-		</div>
-		<div class="small-circle-high"></div>
-		<div class="light"></div>
-		<div class="search"></div>
+		</div> -->
+		<div class="search" ball-event="search"></div>
 	</div>
 	<div class="shutdown"></div>
 	<div class="go-find"></div>
@@ -68,7 +73,7 @@
             "type": "css"
         },
         "fis-conf.js": {
-            "uri": "//leavenfe.com/ezhan/public/fis-conf_e164963.js",
+            "uri": "//leavenfe.com/ezhan/public/fis-conf_ee81137.js",
             "type": "js"
         },
         "lib/mod.js": {
@@ -95,12 +100,16 @@
             "uri": "//leavenfe.com/ezhan/public/lib/zepto/data_54f760b.js",
             "type": "js"
         },
+        "lib/zepto/fx.js": {
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto/fx_9921ea0.js",
+            "type": "js"
+        },
         "lib/zepto.js": {
-            "uri": "//leavenfe.com/ezhan/public/lib/zepto_8fd7ee5.js",
+            "uri": "//leavenfe.com/ezhan/public/lib/zepto_f4a7f5d.js",
             "type": "js"
         },
         "js/init.js": {
-            "uri": "//leavenfe.com/ezhan/public/static/js/_184be87.js",
+            "uri": "//leavenfe.com/ezhan/public/static/js/_667534e.js",
             "type": "js",
             "extras": {
                 "moduleId": "js/init"
@@ -137,10 +146,6 @@
             "uri": "//leavenfe.com/ezhan/public/lib/zepto/fx_methods_2aabbf9.js",
             "type": "js"
         },
-        "lib/zepto/fx.js": {
-            "uri": "//leavenfe.com/ezhan/public/lib/zepto/fx_9921ea0.js",
-            "type": "js"
-        },
         "lib/zepto/gesture.js": {
             "uri": "//leavenfe.com/ezhan/public/lib/zepto/gesture_cfb140d.js",
             "type": "js"
@@ -168,7 +173,7 @@
     },
     "pkg": {}
 })</script>
-    <script type="text/javascript" src="//leavenfe.com/ezhan/public/static/js/_184be87.js"></script>
+    <script type="text/javascript" src="//leavenfe.com/ezhan/public/static/js/_667534e.js"></script>
 	<script>
 		require('js/init')
 	</script>
