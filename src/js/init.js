@@ -11,7 +11,7 @@ var Dial = {
 		small: ''
 	},
 	//检查搜索条件是否满足
-	checkSearch() {
+	checkSearch: function(){
 		if(this.searchParams.big && this.searchParams.mid && this.searchParams.small) {
 			return true;
 		}else {
