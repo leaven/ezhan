@@ -3,7 +3,7 @@
 		<% var perAngel = (360/data[v].length); %>
 		<%data[v].forEach(function(item, index){%>
 			<div class="ball <%=classMap[v]%>-ball" data-param="<%=item.name%>" style="transform:rotateZ(<%=perAngel*index%>deg)" ball-event="rotate">
-				<span class="ball-name"  style="transform:rotateZ(-<%=perAngel*index%>deg)"><%=item.name%></span>
+				<span class="ball-name"  style="transform:rotateZ(-<%=perAngel*index%>deg)" data-baseangle='-<%=perAngel*index%>'><%=item.name%></span>
 			</div>
 		<%})%>
 	</div>

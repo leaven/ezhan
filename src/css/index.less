@@ -39,17 +39,21 @@ body{
 		position: absolute;
 		.rem(width, 1065rem);
 		.rem(height, 1065rem);
+		transition: transform .5s cubic-bezier(0.11, 0.45, 0.57, 1);
+		&.high-light{
+			transform:scale(1.03);
+		}
 	}
 	.big-circle-bg{
-		background:url('/img/big_circle.png') 0 0 no-repeat;
+		background:url('/img/big_circle_1.png') 0 0 no-repeat;
 		background-size: 100% 100%;
 	}
 	.mid-circle-bg{
-		background:url('/img/mid_circle.png') center center no-repeat;
+		background:url('/img/mid_circle_1.png') center center no-repeat;
 		.rem(background-size, 709rem, 709rem);
 	}
 	.small-circle-bg{
-		background:url('/img/small_circle.png') center center no-repeat;
+		background:url('/img/small_circle_1.png') center center no-repeat;
 		.rem(background-size, 459rem, 459rem);
 	}
 	.big-circle-high{

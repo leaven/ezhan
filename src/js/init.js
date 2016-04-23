@@ -3,7 +3,7 @@ require('/css/index.less');
 var Dial = {
 	tpl: __inline('/tpl/ball.tmpl'),
 	_settings: {
-		baseAngle: 3600 //基础旋转角度
+		baseAngle: 0 //基础旋转角度
 	},
 	searchParams: {
 		big: '',
@@ -33,7 +33,7 @@ var Dial = {
 	},
 	getRotate: function(cssAttr) {
 		var reg = /rotateZ\([\-\+]?(\d+)deg\)/;
-		return cssAttr.match(reg) ? cssAttr.match(reg)[1]: 0;
+		return parseFloat(cssAttr.match(reg) ? cssAttr.match(reg)[1]: 0);
 	},
 	rotate: function(e) {
 		//每次只能允许一个转盘旋转
@@ -53,16 +53,23 @@ var Dial = {
 		
 		var deg = this.getRotate($se.css("transform"));
 		var baseDeg = this.getRotate($circle.css("transform"));
+		var rotateDeg = (360-baseDeg % 360) %360;
 		var attr = $circle.data('attr');
 		this.searchParams[attr] = $se.data('param');
-
+		$("."+attr+"-circle-bg").addClass("high-light");
 		$circle.find(".high-light").removeClass('high-light');
 		$circle.addClass('high-light');
 		$se.addClass('high-light');
-		$circle.css('transform', 'rotateZ('+(baseDeg+this._settings.baseAngle+360-deg)+'deg) scale(1.03)');
+
+		var circleRotateDeg = baseDeg+this._settings.baseAngle+360-deg+rotateDeg;
+		$circle.css('transform', 'rotateZ('+circleRotateDeg+'deg) scale(1.03)');
+		
+		$circle.find('.ball-name').forEach(function(ball) {
+			$(ball).css('transform', 'rotateZ('+($(ball).data('baseangle')-circleRotateDeg)+'deg)');
+		}.bind(this))
 		$circle.on('transitionend', function() {
-			$circle.off('transitionend');
-			$circle.removeClass('high-light');
+			$circle.off('transitionend').removeClass('high-light').css('transform', 'rotateZ('+circleRotateDeg+'deg)');
+			$("."+attr+"-circle-bg").removeClass("high-light");
 			this.rotateLock = false;
 			if(this.checkSearch()) {
 				this.search();
