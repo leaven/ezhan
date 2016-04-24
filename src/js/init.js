@@ -152,6 +152,7 @@ var Dial = {
 	}
 }
 $(function() {
+	alert('devicePixelRatio:'+window.devicePixelRatio+";width:"+document.documentElement.clientWidth+";height:"+document.documentElement.clientHeight);
 	$("body").height(document.documentElement.clientHeight).width(document.documentElement.clientWidth);
 	Dial.init();
 })
