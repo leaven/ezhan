@@ -83,7 +83,11 @@ var Dial = {
 		}
 	},
 	search: function() {
-		console.log('search');
+		var params = {};
+		params.big = this.searchParams.big || '全部';
+		params.mid = this.searchParams.mid || '全部';
+		params.small = this.searchParams.small || '全部';
+		location.href = "http://182.92.201.177:8080/list.html?first="+params.big+"&second="+params.mid+ "&third="+params.small;
 	},
 	getData: function() {
 		$.ajax({
@@ -91,7 +95,15 @@ var Dial = {
 			type:'post',
 			dataType: 'json',
 			data:{
-				token: '2_1461509247_fbrdPmD96h-3'
+				"data":JSON.stringify({
+					token: '2_1461509247_fbrdPmD96h-3'
+				}),
+				"appId": localStorage.getItem('channelAppid') ||0,
+		    	"timestamp": Date.parse(new Date()),
+		    	"methodName": 'addOrder',
+		    	"version": '10',
+			    "token": "2_1461509247_fbrdPmD96h-3",
+			    "sign": '1'
 			},
 			success: function(data) {
 				console.log(data);
