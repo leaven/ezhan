@@ -32,6 +32,14 @@ body{
 	}
 	.circle{
 		transition:transform 2s cubic-bezier(0.11, 0.45, 0.57, 1);
+		.circle-scale{
+			position: absolute;
+			width:100%;
+			height:100%;
+		}
+		&.high-light .circle-scale{
+			transform:scale(1.03);
+		}
 	}
 	.big-circle-bg,
 	.mid-circle-bg,
@@ -41,8 +49,14 @@ body{
 		.rem(height, 1065rem);
 		transition: transform .5s cubic-bezier(0.11, 0.45, 0.57, 1);
 		&.high-light{
-			transform:scale(1.03);
+			transform: scale(1.03);
+			-webkit-perspective:1200;
+			-webkit-backface-visibility:hidden;
 		}
+		// &.high-light{
+		// 	.rem(width, 1097rem);
+		// 	.rem(height, 1097rem);
+		// }
 	}
 	.big-circle-bg{
 		background:url('/img/big_circle_1.png') 0 0 no-repeat;
@@ -51,10 +65,17 @@ body{
 	.mid-circle-bg{
 		background:url('/img/mid_circle_1.png') center center no-repeat;
 		.rem(background-size, 709rem, 709rem);
+		// &.high-light{
+		// 	.rem(background-size, 730rem, 730rem);
+		// }
+
 	}
 	.small-circle-bg{
 		background:url('/img/small_circle_1.png') center center no-repeat;
 		.rem(background-size, 459rem, 459rem);
+		// &.high-light{
+		// 	.rem(background-size, 473rem, 473rem);
+		// }
 	}
 	.big-circle-high{
 		position: absolute;
@@ -84,6 +105,12 @@ body{
 		left:50%;
 		.rem(margin-left,-485rem);
 		.rem(margin-top,-485rem);
+		// &.high-light{
+		// 	.rem(width, 1000rem);
+		// 	.rem(height, 1000rem);
+		// 	.rem(margin-left, -500rem);
+		// 	.rem(margin-top, -500rem);
+		// }
 		.big-ball{
 			position: absolute;
 			.rem(width, 121rem);
@@ -116,6 +143,12 @@ body{
 		top:50%;
 		.rem(margin-left, -335rem);
 		.rem(margin-top, -335rem);
+		// &.high-light{
+		// 	.rem(width, 690rem);
+		// 	.rem(height, 690rem);
+		// 	.rem(margin-left, -345rem);
+		// 	.rem(margin-top, -345rem);
+		// }
 		.mid-ball{
 			position: absolute;
 			.rem(width, 108rem);
@@ -147,6 +180,12 @@ body{
 		top:50%;
 		.rem(margin-left, -200rem);
 		.rem(margin-top, -200rem);
+		// &.high-light{
+		// 	.rem(width, 412rem);
+		// 	.rem(height, 412rem);
+		// 	.rem(margin-left, -206rem);
+		// 	.rem(margin-top, -206rem);
+		// }
 		.small-ball{
 			position: absolute;
 			.rem(width, 92rem);
@@ -230,7 +269,7 @@ body{
 	position: absolute;
 	left:50%;
 	transform:translate(-50%,0);
-	.rem(bottom, 200rem);
+	.rem(bottom, 150rem);
 	.rem(width, 247rem);
 	.rem(height, 78rem);
 	background: url('/img/go_find.png') 0 0 no-repeat;

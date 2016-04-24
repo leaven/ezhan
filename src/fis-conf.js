@@ -28,6 +28,7 @@ fis.match('**/*.less', {
   parser: fis.plugin('less', {
       
   }),
+  postprocessor: fis.plugin('autoprefixer'),
   useMap: true
 });
 
