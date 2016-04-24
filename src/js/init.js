@@ -82,6 +82,20 @@ var Dial = {
 		console.log('search');
 	},
 	getData: function() {
+		$.ajax({
+			url: 'http://182.92.201.177:8081/queryIndexSearch.do',
+			type:'post',
+			dataType: 'json',
+			data:{
+				token: '2_1461509247_fbrdPmD96h-3'
+			},
+			success: function(data) {
+				console.log(data);
+			},
+			error: function(msg){
+				console.log(msg);
+			}
+		})
 		var data = {
 		    "first": [
 		        {
