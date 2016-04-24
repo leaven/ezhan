@@ -36,6 +36,7 @@ var Dial = {
 		return parseFloat(cssAttr.match(reg) ? cssAttr.match(reg)[1]: 0);
 	},
 	rotate: function(e) {
+		alert('rotate');
 		//每次只能允许一个转盘旋转
 		if(this.rotateLock && this.rotateLock === true) {
 			return;
