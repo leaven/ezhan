@@ -62,14 +62,14 @@ var Dial = {
 		$se.addClass('high-light');
 
 		var circleRotateDeg = baseDeg+this._settings.baseAngle+360-deg+rotateDeg;
-		$circle.css('transform', 'rotateZ('+circleRotateDeg+'deg)' ).find('.circle-scale');
+		$circle.css('-webkit-transform', 'rotateZ('+circleRotateDeg+'deg)' ).find('.circle-scale');
 		
 		$circle.find('.ball-name').forEach(function(ball) {
-			$(ball).css('transform', 'rotateZ('+($(ball).data('baseangle')-circleRotateDeg)%360+'deg)');
+			$(ball).css('-webkit-transform', 'rotateZ('+($(ball).data('baseangle')-circleRotateDeg)%360+'deg)');
 		}.bind(this));
 
-		$circle.on('transitionend', function() {
-			$circle.off('transitionend').removeClass('high-light')
+		$circle.on('webkitTransitionEnd', function() {
+			$circle.off('webkitTransitionEnd').removeClass('high-light')
 			// .css('transform', 'rotateZ('+circleRotateDeg+'deg)');
 			$("."+attr+"-circle-bg").removeClass("high-light");
 			this.rotateLock = false;
