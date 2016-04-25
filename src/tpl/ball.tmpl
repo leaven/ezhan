@@ -1,9 +1,9 @@
-<%Object.keys(data).forEach(function(v) {%>
-	<div class="circle <%=classMap[v]%>-circle"  data-attr="<%=classMap[v]%>">
+<%Object.keys(classMap).forEach(function(k){%>
+	<div class="circle <%=classMap[k]%>-circle"  data-attr="<%=classMap[k]%>">
 		<div class="circle-scale">
-			<% var perAngel = (360/data[v].length); %>
-			<%data[v].forEach(function(item, index){%>
-				<div class="ball <%=classMap[v]%>-ball" data-param="<%=item.name%>" style="-webkit-transform:rotateZ(<%=perAngel*index%>deg)" ball-event="rotate">
+			<% var perAngel = (360/data[k].length); %>
+			<%data[k].forEach(function(item, index){%>
+				<div class="ball <%=classMap[k]%>-ball" data-param="<%=item.name%>" style="-webkit-transform:rotateZ(<%=perAngel*index%>deg)" ball-event="rotate">
 					<span class="ball-name"  style="-webkit-transform:rotateZ(-<%=perAngel*index%>deg)" data-baseangle='-<%=perAngel*index%>'><%=item.name%></span>
 				</div>
 			<%})%>

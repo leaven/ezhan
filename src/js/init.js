@@ -18,6 +18,19 @@ var Dial = {
 			return false;
 		}
 	},
+	getQueryParams: function(qs) {
+	    qs = qs.replace(/\+/g, " ");
+	    var params = {},
+	        re = /[?&]?([^=]+)=([^&]*)/g,
+	        tokens;
+	 
+	    while (tokens = re.exec(qs)) {
+	        params[decodeURIComponent(tokens[1])]
+	            = decodeURIComponent(tokens[2]);
+	    }
+	 
+	    return params;
+	},
 	init: function() {
 		this.$el = $('.dial');
 		this.$circleWrapper = this.$el.find('.circle-wrapper');
@@ -62,7 +75,7 @@ var Dial = {
 			$circle.addClass('high-light');
 			$se.addClass('high-light');
 
-			var circleRotateDeg = baseDeg+this._settings.baseAngle+360-deg+rotateDeg;
+			var circleRotateDeg = baseDeg+this._settings.baseAngle+(360-deg)%360+rotateDeg;
 			$circle.css('-webkit-transform', 'rotateZ('+circleRotateDeg+'deg)' ).find('.circle-scale');
 			
 			$circle.find('.ball-name').forEach(function(ball) {
@@ -75,7 +88,7 @@ var Dial = {
 				$("."+attr+"-circle-bg").removeClass("high-light");
 				this.rotateLock = false;
 				if(this.checkSearch()) {
-					this.search();
+					setTimeout(this.search.bind(this), 300);
 				}
 			}.bind(this));
 		}catch(e){
@@ -90,24 +103,26 @@ var Dial = {
 		location.href = "http://182.92.201.177:8080/list.html?first="+params.big+"&second="+params.mid+ "&third="+params.small;
 	},
 	getData: function() {
+		var token = (this.getQueryParams(location.search))['token'];
 		$.ajax({
 			url: 'http://182.92.201.177:8081/queryIndexSearch.do',
-			type:'post',
-			dataType: 'json',
+			type:'get',
+			dataType: 'jsonp',
 			data:{
 				"data":JSON.stringify({
-					token: '2_1461509247_fbrdPmD96h-3'
-				}),
-				"appId": localStorage.getItem('channelAppid') ||0,
-		    	"timestamp": Date.parse(new Date()),
-		    	"methodName": 'addOrder',
-		    	"version": '10',
-			    "token": "2_1461509247_fbrdPmD96h-3",
-			    "sign": '1'
+					token: token
+				})
+				// "appId": localStorage.getItem('channelAppid') ||0,
+		  //   	"timestamp": Date.parse(new Date()),
+		  //   	"methodName": 'addOrder',
+		  //   	"version": '10',
+			 //    "token": "2_1461509247_fbrdPmD96h-3",
+			 //    "sign": '1'
 			},
 			success: function(data) {
 				console.log(data);
-			},
+				this.render(data.body);
+			}.bind(this),
 			error: function(msg){
 				console.log(msg);
 			}
@@ -169,7 +184,7 @@ var Dial = {
 		      ]
 		}
 
-		this.render(data);
+		// this.render(data);
 	},
 	render: function(data) {
 		var classMap = {
