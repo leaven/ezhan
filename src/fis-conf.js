@@ -68,6 +68,18 @@ fis.match('*.tmpl', {
 //发布上线的时候进行压缩合并js、css
 fis.media('prod')
   .match('*.js', {
+    optimizer: fis.plugin('uglify-js')
+  })
+  .match('*.css', {
+    optimizer: fis.plugin('clean-css')
+  })
+  .match('*.less', {
+    optimizer: fis.plugin('clean-css')
+  })
+
+//
+fis.media('git')
+  .match('*.js', {
     optimizer: fis.plugin('uglify-js'),
     domain: domain
   })
@@ -83,10 +95,18 @@ fis.media('prod')
     domain: domain
   });
 
-/****************上线配置请勿随便修改******************/
-fis.media('prod')
+/****************git配置请勿随便修改******************/
+fis.media('git')
   .match('**', {
     deploy: fis.plugin('local-deliver', {
       to: '../public'
+    })
+});
+
+  /****************上线配置请勿随便修改******************/
+fis.media('prod')
+  .match('**', {
+    deploy: fis.plugin('local-deliver', {
+      to: '../dist'
     })
 });
