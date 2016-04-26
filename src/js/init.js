@@ -45,7 +45,7 @@ var Dial = {
 		// this.$circle = this.$el.find('.dial-circle');
 	},
 	getRotate: function(cssAttr) {
-		var reg = /rotateZ\([\-\+]?(\d+)deg\)/;
+		var reg = /rotateZ\([\-\+]?(.+)deg\)/;
 		return parseFloat(cssAttr.match(reg) ? cssAttr.match(reg)[1]: 0);
 	},
 	rotate: function(e) {
@@ -67,6 +67,7 @@ var Dial = {
 			
 			var deg = this.getRotate($se.css("-webkit-transform"));
 			var baseDeg = this.getRotate($circle.css("-webkit-transform"));
+			console.log(deg+","+baseDeg);
 			var rotateDeg = (360-baseDeg % 360) %360;
 			var attr = $circle.data('attr');
 			this.searchParams[attr] = $se.data('param');
@@ -120,7 +121,6 @@ var Dial = {
 			 //    "sign": '1'
 			},
 			success: function(data) {
-				console.log(data);
 				this.render(data.body);
 			}.bind(this),
 			error: function(msg){
