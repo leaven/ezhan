@@ -67,7 +67,6 @@ var Dial = {
 			
 			var deg = this.getRotate($se.css("-webkit-transform"));
 			var baseDeg = this.getRotate($circle.css("-webkit-transform"));
-			console.log(deg+","+baseDeg);
 			var rotateDeg = (360-baseDeg % 360) %360;
 			var attr = $circle.data('attr');
 			this.searchParams[attr] = $se.data('param');
@@ -127,64 +126,6 @@ var Dial = {
 				console.log(msg);
 			}
 		})
-		var data = {
-		    "first": [
-		        {
-		        	"id": 1, 
-		        	"name": "1"
-		        },
-		        {
-		        	"id": 2, 
-		        	"name": "2"
-		        },
-		        {
-		        	"id": 3, 
-		       		"name": "3"
-		       	},
-		        {
-		        	"id": 4, 
-		        	"name": "4"
-		        }
-		     ], 
-		    "second": [
-		        {
-		        	"id": 1, 
-		       		"name": "1"
-		       	},
-		        {
-		        	"id": 2, 
-		        	"name": "2"
-		    	},
-		        {
-		        	"id": 3, 
-		        	"name": "3"
-		        },
-		        {
-		        	"id": 4, 
-		       		"name": "4"
-		       	}
-		    ], 
-		    "third": [
-		        {
-		        	"id": 1, 
-		       		"name": "1"
-		    	},
-		        {
-		        	"id": 2, 
-		        	"name": "2"
-		    	},
-		        {
-		        	"id": 3, 
-		        	"name": "3"
-		        },
-		        {
-		        	"id": 4, 
-		        	"name": "4"
-		        }
-		      ]
-		}
-
-		// this.render(data);
 	},
 	render: function(data) {
 		var classMap = {

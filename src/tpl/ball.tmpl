@@ -4,7 +4,13 @@
 			<% var perAngel = (360/data[k].length); %>
 			<%data[k].forEach(function(item, index){%>
 				<div class="ball <%=classMap[k]%>-ball" data-param="<%=item.name%>" style="-webkit-transform:rotateZ(<%=perAngel*index%>deg)" ball-event="rotate">
-					<span class="ball-name"  style="-webkit-transform:rotateZ(-<%=perAngel*index%>deg)" data-baseangle='-<%=perAngel*index%>'><%=item.name%></span>
+					<%var strlength = item.name.length, ball_name_sp=""; %>
+					<% if(strlength >= 10){ %>
+						<%ball_name_sp="long-name"; %>
+					<%}else if(strlength >=8){ %>
+						<%ball_name_sp="mid-name"; %>
+					<%}%>
+					<span class="ball-name <%=ball_name_sp%>"  style="-webkit-transform:rotateZ(-<%=perAngel*index%>deg)" data-baseangle='-<%=perAngel*index%>'><%=item.name%></span>
 				</div>
 			<%})%>
 		</div>
