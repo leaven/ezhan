@@ -35,6 +35,7 @@ var Dial = {
 		this.$el = $('.dial');
 		this.$circleWrapper = this.$el.find('.circle-wrapper');
 		this.getSelector();
+		this.getToken();
 		this.getData();
 	},
 	bindEvents: function() {
@@ -100,17 +101,19 @@ var Dial = {
 		params.big = this.searchParams.big || '全部';
 		params.mid = this.searchParams.mid || '全部';
 		params.small = this.searchParams.small || '全部';
-		location.href = "http://182.92.201.177:8080/list.html?first="+params.big+"&second="+params.mid+ "&third="+params.small;
+		location.href = "http://182.92.201.177:8080/list.html?first="+params.big+"&second="+params.mid+ "&third="+params.small+"&token="+this.token;
+	},
+	getToken: function() {
+		this.token = (this.getQueryParams(location.search))['token'] || $.fn.cookie('token');	
 	},
 	getData: function() {
-		var token = (this.getQueryParams(location.search))['token'];
 		$.ajax({
 			url: 'http://182.92.201.177:8081/queryIndexSearch.do',
 			type:'get',
 			dataType: 'jsonp',
 			data:{
 				"data":JSON.stringify({
-					token: token
+					token: this.token
 				})
 				// "appId": localStorage.getItem('channelAppid') ||0,
 		  //   	"timestamp": Date.parse(new Date()),
