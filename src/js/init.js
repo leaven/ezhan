@@ -41,6 +41,7 @@ var Dial = {
 	bindEvents: function() {
 		$(".dial").on("click", '[ball-event="rotate"]', this.rotate.bind(this));
 		this.$el.on("click", '[ball-event="search"]', this.search.bind(this));
+		$("body").on("click", '[ball-event="find"]', this.goFind.bind(this));
 	},
 	getSelector: function() {
 		// this.$circle = this.$el.find('.dial-circle');
@@ -129,6 +130,9 @@ var Dial = {
 				console.log(msg);
 			}
 		})
+	},
+	goFind: function(){
+		location.href = 'http://182.92.201.177:8080/list.html?token='+ this.token;
 	},
 	render: function(data) {
 		var classMap = {
