@@ -99,9 +99,9 @@ var Dial = {
 	},
 	search: function() {
 		var params = {};
-		params.big = this.searchParams.big || '全部';
-		params.mid = this.searchParams.mid || '全部';
-		params.small = this.searchParams.small || '全部';
+		params.big = this.searchParams.big || 0;
+		params.mid = this.searchParams.mid || 0;
+		params.small = this.searchParams.small || 0;
 		location.href = "http://182.92.201.177:8080/list.html?first="+params.big+"&second="+params.mid+ "&third="+params.small+"&token="+this.token;
 	},
 	getToken: function() {
