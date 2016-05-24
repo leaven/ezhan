@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/css/reset.less" />
 	<script src="/lib/mod.js"></script>
 	<script src="/lib/flexible.js"></script>
-	<script src="/lib/zepto.js"></script>
+	
 	<title>E栈</title>
 </head>
 <body>
@@ -24,21 +24,26 @@
 			<img src="./img/small_ball_high.png" />
 		</div>
 		<div class="big-circle-bg"></div>
-		<!-- <div class="big-circle-high"></div> -->
 		<div class="mid-circle-bg"></div>
-		<!-- <div class="mid-circle-high"></div> -->
 		<div class="small-circle-bg"></div>
-		<!-- <div class="small-circle-high"></div> -->
 		<div class="light"></div>
-		<div class="circle-wrapper"></div>
+		<svg class="circle-wrapper"></svg>
 		<div class="search" ball-event="search"></div>
 	</div>
 	<div class="shutdown"></div>
 	<a class="go-find" ball-event="find"></a>
+	<svg id="svg"></svg>
+	<script src="/lib/zepto.js"></script>
+	<script src="/lib/snap.svg.js"></script>
  	<script>require.resourceMap(__RESOURCE_MAP__)</script>
     <!--SCRIPT_PLACEHOLDER-->
 	<script>
 		require('/js/init.js')
+	</script>
+	<script type="text/javascript">
+		var s = Snap("#svg");
+		var bigCircle = s.circle(150, 150, 100);
+		$("#svg").on("click", 'circle', function() {console.log(1111)})
 	</script>
 </body>
 </html>
