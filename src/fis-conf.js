@@ -32,7 +32,7 @@ fis.match('**/*.less', {
   useMap: true
 });
 
-fis.match(/^\/js\/init\.js$/, {
+fis.match(/^\/js\/.*\.js$/, {
     isMod: true,
     useMap: true,
     release: '${statics}/js/init.js'
