@@ -32,35 +32,14 @@
 	</div>
 	<div class="shutdown"></div>
 	<a class="go-find" ball-event="find"></a>
-	<svg id="svg"></svg>
+	<!-- <svg id="svg"></svg> -->
 	<script src="/lib/zepto.js"></script>
-	<script src="/lib/snap.svg.js"></script>
+	<!-- <script src="/lib/snap.svg.js"></script> -->
  	<script>require.resourceMap(__RESOURCE_MAP__)</script>
     <!--SCRIPT_PLACEHOLDER-->
 	<script>
 		require('/js/init.js');
-		require('/js/drawSvg.js');
+		// require('/js/drawSvg.js');
 	</script>
-	<!-- <script type="text/javascript">
-		var s = Snap("#svg");
-		var bigCircle = s.circle(150, 150, 100);
-		bigCircle.attr({
-		    fill: "transparent",
-		    stroke: "#000",
-		    strokeWidth: 5
-		});
-		var midCircle = s.circle(150, 150, 70);
-		midCircle.attr({
-			fill: "transparent",
-		    stroke: "#000",
-		    strokeWidth: 5
-		});
-		bigCircle.click(function() {
-			console.log('bigCircle');
-		});
-		midCircle.click(function() {
-			console.log('midCircle');
-		});
-	</script> -->
 </body>
 </html>

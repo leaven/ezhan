@@ -81,7 +81,9 @@
 .rem(transform3d, @valueX, @valueY, @valueZ) {
   transform: translate3d(@valueX/@rootSize,@valueY/@rootSize,@valueZ/@rootSize)
 }
-
+.rem(border-radius, @value) {
+	border-radius: @value/@rootSize;
+}
 .rem(-webkit-transform3d, @valueX, @valueY, @valueZ) {
   -webkit-transform: translate3d(@valueX/@rootSize,@valueY/@rootSize,@valueZ/@rootSize)
 }

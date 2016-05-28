@@ -10,7 +10,7 @@
 	<script src="/lib/mod_c630892.js"></script>
 
 	<script src="/lib/flexible_d792e06.js"></script>
-	<script src="/lib/zepto_46e79cd.js"></script>
+	
 	<title>E栈</title>
 
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
@@ -27,17 +27,17 @@
 			<img src="/img/small_ball_high_66548fc.png" />
 		</div>
 		<div class="big-circle-bg"></div>
-		<!-- <div class="big-circle-high"></div> -->
 		<div class="mid-circle-bg"></div>
-		<!-- <div class="mid-circle-high"></div> -->
 		<div class="small-circle-bg"></div>
-		<!-- <div class="small-circle-high"></div> -->
 		<div class="light"></div>
 		<div class="circle-wrapper"></div>
 		<div class="search" ball-event="search"></div>
 	</div>
 	<div class="shutdown"></div>
 	<a class="go-find" ball-event="find"></a>
+	<!-- <svg id="svg"></svg> -->
+	<script src="/lib/zepto_46e79cd.js"></script>
+	<!-- <script src="/lib/snap.svg.js"></script> -->
  	<script>require.resourceMap({
     "res": {
         "css/csslib.less": {
@@ -53,7 +53,7 @@
             "type": "css"
         },
         "fis-conf.js": {
-            "uri": "/fis-conf_175a530.js",
+            "uri": "/fis-conf_4448e81.js",
             "type": "js"
         },
         "lib/mod.js": {
@@ -62,10 +62,6 @@
         },
         "lib/flexible.js": {
             "uri": "/lib/flexible_d792e06.js",
-            "type": "js"
-        },
-        "lib/zepto.js": {
-            "uri": "/lib/zepto_46e79cd.js",
             "type": "js"
         },
         "lib/zepto/zepto.js": {
@@ -92,6 +88,10 @@
             "uri": "/lib/zepto/cookie_1e87ada.js",
             "type": "js"
         },
+        "lib/zepto.js": {
+            "uri": "/lib/zepto_46e79cd.js",
+            "type": "js"
+        },
         "js/init.js": {
             "uri": "/static/js/init_fe8387c.js",
             "type": "js",
@@ -100,6 +100,20 @@
             },
             "deps": [
                 "css/index.less"
+            ]
+        },
+        "js/drawSvg.js": {
+            "uri": "/static/js/init_e3eca9e.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "js/drawSvg"
+            }
+        },
+        "lib/snap.svg.js": {
+            "uri": "/lib/snap.svg_9b6b997.js",
+            "type": "js",
+            "deps": [
+                "eve"
             ]
         },
         "lib/zepto/assets.js": {
@@ -155,7 +169,8 @@
 })</script>
     <script type="text/javascript" src="/static/js/init_fe8387c.js"></script>
 	<script>
-		require('js/init')
+		require('js/init');
+		// require('/js/drawSvg.js');
 	</script>
 </body>
 </html>

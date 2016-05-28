@@ -42,6 +42,7 @@ body{
 			position: absolute;
 			width:100%;
 			height:100%;
+			border-radius: 100%;
 		}
 		&.high-light .circle-scale{
 			transform:scale(1.03);
@@ -111,6 +112,7 @@ body{
 		left:50%;
 		.rem(margin-left,-485rem);
 		.rem(margin-top,-485rem);
+		.rem(border-radius, 485rem);
 		// &.high-light{
 		// 	.rem(width, 1000rem);
 		// 	.rem(height, 1000rem);
@@ -149,6 +151,7 @@ body{
 		top:50%;
 		.rem(margin-left, -335rem);
 		.rem(margin-top, -335rem);
+		.rem(border-radius, 335rem);
 		// &.high-light{
 		// 	.rem(width, 690rem);
 		// 	.rem(height, 690rem);
@@ -192,6 +195,7 @@ body{
 		top:50%;
 		.rem(margin-left, -200rem);
 		.rem(margin-top, -200rem);
+		.rem(border-radius, 200rem);
 		// &.high-light{
 		// 	.rem(width, 412rem);
 		// 	.rem(height, 412rem);
@@ -286,10 +290,6 @@ body{
 	.rem(height, 78rem);
 	background: url('/img/go_find.png') 0 0 no-repeat;
 	background-size:100% 100%;
-}
-
-.circle-wrapper{
-	display: none;
 }
 #svg{
 	position: absolute;
