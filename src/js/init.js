@@ -103,9 +103,7 @@ var Dial = {
 		location.href = "http://182.92.201.177:8080/list.html?first="+params.big+"&second="+params.mid+ "&third="+params.small+"&token="+this.token;
 	},
 	getToken: function() {
-		alert(location.href);
 		this.token = (this.getQueryParams(location.search))['token'] || $.fn.cookie('token');	
-		alert(this.token);
 	},
 	getData: function() {
 		$.ajax({
