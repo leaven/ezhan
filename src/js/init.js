@@ -1,5 +1,3 @@
-require('/css/index.less');
-
 var Dial = {
 	tpl: __inline('/tpl/ball.tmpl'),
 	_settings: {
