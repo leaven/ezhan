@@ -106,9 +106,21 @@ var Dial = {
 		this.token = (this.getQueryParams(location.search))['token'] || $.fn.cookie('token');	
 	},
 	getData: function() {
+		var plat = this.getQueryParams(location.search)['plat'] || 1, url;
+		switch(plat) {
+			case '1': 
+				url = '/data/list1.json';
+				break;
+			case '2':
+				url = '/data/list2.json';
+				break;
+			case '3': 
+				url= '/data/list3.json';
+				break;
+		}
 		$.ajax({
 			//url: 'http://182.92.201.177:8081/queryIndexSearch.do',
-			url: '/data/list.json',
+			url: url,
 			type:'get',
 			dataType: 'json',
 			//dataType: 'jsonp',
