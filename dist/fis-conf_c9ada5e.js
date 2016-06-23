@@ -1,46 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>e栈</title>
-	<meta name="viewport" content="user-scalable=no,initial-scale=1,width=device-width">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="keywords" content="e栈">
-	<link rel="stylesheet" href="/css/reset.css" />
-	<link rel="stylesheet" href="/css/index.css" />
-	<link rel="stylesheet" media="(min-width: 700px) and (max-width: 800px)" href="/css/mipad.css" />
-	<script src="/lib/mod_e3c86fb.js"></script>
+fis.set('statics', '/static');
+fis.set('tpl', '/page/');
+fis.set('project.ignore', [
+  'output/**',
+  'node_modules/**',
+  '.git/**',
+  '.svn/**'
+]);
+var domain = '//leavenfe.com/ezhan/public';
+//FIS modjs模块化方案
+fis.hook('commonjs');
 
-	<script src="/lib/flexible_2600918.js"></script>
-	
-	<title>E栈</title>
+//hash配置,类似执行fis2 -m 
+fis.match('*.{js,css}', {
+    useHash: true
+  })
+  .match('image', {
+    useHash: true
+  });
 
-    
-</head>
-<body>
-	<div class="logo">
-		<img class="logo-img" src="/img/logo_f455f17.png" />
-		<p class="logo-title"><img src="/img/logo_title_b8ea0e7.png" /></p>
-	</div>
-	<div class="dial">
-		<div class="img-container">
-			<img src="/img/big_ball_high_351db73.png" />
-			<img src="/img/mid_ball_high_785860f.png" />
-			<img src="/img/small_ball_high_66548fc.png" />
-		</div>
-		<div class="big-circle-bg"></div>
-		<div class="mid-circle-bg"></div>
-		<div class="small-circle-bg"></div>
-		<div class="light"></div>
-		<div class="circle-wrapper"></div>
-		<div class="search" ball-event="search"></div>
-	</div>
-	<div class="shutdown"></div>
-	<a class="go-find" ball-event="find"></a>
-	<!-- <svg id="svg"></svg> -->
-	<script src="/lib/zepto_e4c6ac9.js"></script>
-	<!-- <script src="/lib/snap.svg.js"></script> -->
- 	<script>require.resourceMap({
+fis.match('*.{js,es,es6,jsx,ts,tsx}', {
+  preprocessor: fis.plugin('js-require-css')
+})
+
+/****************异构语言编译*****************/
+fis.match('**/*.less', {
+  rExt: '.css', // from .less to .css
+  parser: fis.plugin('less', {
+      
+  }),
+  postprocessor: fis.plugin('autoprefixer'),
+  useMap: true
+});
+
+fis.match(/^\/js\/.*\.js$/, {
+    isMod: true,
+    useMap: true,
+    release: '${statics}/js/init.js'
+})
+
+fis.match('::package', {
+    // npm install [-g] fis3-postpackager-loader
+    // 分析 {
     "res": {
         "css/csslib.less": {
             "uri": "/css/csslib.css",
@@ -162,11 +162,73 @@
         }
     },
     "pkg": {}
-})</script>
-    <script type="text/javascript" src="/static/js/init_90c964e.js"></script>
-	<script>
-		require('js/init');
-		// require('/js/drawSvg.js');
-	</script>
-</body>
-</html>
+} 结构，来解决资源加载问题
+    postpackager: fis.plugin('loader', {
+        resourceType: 'mod',
+        useInlineMap: false, // 资源映射表内嵌
+        obtainScript: false,
+        obtainStyle: false
+    })
+})
+
+//tmpl、tpl作为js模板，直接Inline到js中，不需要发布
+fis.match('*.tmpl', {
+      parser: fis.plugin('utc'),
+      isJsLike: true,
+      release: false
+    })
+    .match('*.tpl', {
+      release: false
+    })
+    .match('*.inline.less', {
+      release: false
+    })
+    .match('*.md', {
+      release: false
+    })
+/**********************生产环境下CSS、JS压缩合并*****************/
+//发布上线的时候进行压缩合并js、css
+fis.media('prod')
+  // .match('*.js', {
+  //   optimizer: fis.plugin('uglify-js')
+  // })
+  .match('*.css', {
+    optimizer: fis.plugin('clean-css')
+  })
+  .match('*.less', {
+    optimizer: fis.plugin('clean-css')
+  })
+
+//
+fis.media('git')
+  .match('*.js', {
+    optimizer: fis.plugin('uglify-js'),
+    domain: domain
+  })
+  .match('*.css', {
+    optimizer: fis.plugin('clean-css'),
+    domain: domain
+  })
+  .match('*.less', {
+    optimizer: fis.plugin('clean-css'),
+    domain: domain
+  })
+  .match('*', {
+    domain: domain
+  });
+
+/****************git配置请勿随便修改******************/
+fis.media('git')
+  .match('**', {
+    deploy: fis.plugin('local-deliver', {
+      to: '../public'
+    })
+});
+
+  /****************上线配置请勿随便修改******************/
+fis.media('prod')
+  .match('**', {
+    deploy: fis.plugin('local-deliver', {
+      to: '../dist'
+    })
+});
