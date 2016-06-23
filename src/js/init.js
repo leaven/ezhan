@@ -107,19 +107,15 @@ var Dial = {
 	},
 	getData: function() {
 		$.ajax({
-			url: 'http://182.92.201.177:8081/queryIndexSearch.do',
+			//url: 'http://182.92.201.177:8081/queryIndexSearch.do',
+			url: '/data/list.json',
 			type:'get',
-			dataType: 'jsonp',
+			dataType: 'json',
+			//dataType: 'jsonp',
 			data:{
 				"data":JSON.stringify({
 					token: this.token
 				})
-				// "appId": localStorage.getItem('channelAppid') ||0,
-		  //   	"timestamp": Date.parse(new Date()),
-		  //   	"methodName": 'addOrder',
-		  //   	"version": '10',
-			 //    "token": "2_1461509247_fbrdPmD96h-3",
-			 //    "sign": '1'
 			},
 			success: function(data) {
 				this.render(data.body);
