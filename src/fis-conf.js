@@ -66,16 +66,16 @@ fis.match('*.tmpl', {
     })
 /**********************生产环境下CSS、JS压缩合并*****************/
 //发布上线的时候进行压缩合并js、css
-fis.media('prod')
+// fis.media('prod')
   // .match('*.js', {
   //   optimizer: fis.plugin('uglify-js')
   // })
-  .match('*.css', {
-    optimizer: fis.plugin('clean-css')
-  })
-  .match('*.less', {
-    optimizer: fis.plugin('clean-css')
-  })
+  // .match('*.css', {
+  //   optimizer: fis.plugin('clean-css')
+  // })
+  // .match('*.less', {
+  //   optimizer: fis.plugin('clean-css')
+  // })
 
 //
 fis.media('git')
