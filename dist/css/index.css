@@ -9,14 +9,19 @@ body {
   text-align: center;
 }
 .logo .logo-img {
+  margin: 0 auto;
   margin-top: 0.7rem;
   width: 2.87rem;
   height: 2.33rem;
+  background: url(/img/logo_f455f17.png) center 0 no-repeat;
+  background-size: 100% 100%;
 }
-.logo-title img {
-  margin-top: 0rem;
+.logo-title {
+  margin: 0 auto;
   width: 6.49rem;
   height: 1.06rem;
+  background: url(/img/logo_title_b8ea0e7.png) center 0 no-repeat;
+  background-size: 100% 100%;
 }
 .dial {
   position: relative;
