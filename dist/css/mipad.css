@@ -5,7 +5,8 @@ body .logo {
   background: url(/img/mi_logo_c8343a0.png) 0 0 no-repeat;
   background-size: 100% 100%;
 }
-body .logo img {
+body .logo .logo-img,
+body .logo .logo-title {
   display: none;
 }
 body .dial {
