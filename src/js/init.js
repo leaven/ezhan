@@ -30,6 +30,7 @@ var Dial = {
 	    return params;
 	},
 	init: function() {
+		location.reload();
 		this.$el = $('.dial');
 		this.$circleWrapper = this.$el.find('.circle-wrapper');
 		this.getSelector();
