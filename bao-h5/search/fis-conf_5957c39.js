@@ -1,4 +1,4 @@
-fis.set('statics', '/static');
+fis.set('statics', '/search');
 fis.set('tpl', '/page/');
 fis.set('project.ignore', [
   'output/**',
@@ -59,7 +59,7 @@ fis.match('::package', {
             "type": "css"
         },
         "fis-conf.js": {
-            "uri": "/fis-conf_1b6ac67.js",
+            "uri": "/fis-conf_5957c39.js",
             "type": "js"
         },
         "lib/mod.js": {
@@ -68,6 +68,10 @@ fis.match('::package', {
         },
         "lib/flexible.js": {
             "uri": "/lib/flexible_2600918.js",
+            "type": "js"
+        },
+        "lib/zepto.js": {
+            "uri": "/lib/zepto_e4c6ac9.js",
             "type": "js"
         },
         "lib/zepto/zepto.js": {
@@ -94,12 +98,8 @@ fis.match('::package', {
             "uri": "/lib/zepto/cookie_4b55a66.js",
             "type": "js"
         },
-        "lib/zepto.js": {
-            "uri": "/lib/zepto_e4c6ac9.js",
-            "type": "js"
-        },
         "js/init.js": {
-            "uri": "/static/js/init_90c964e.js",
+            "uri": "/search/js/init_dd4cac4.js",
             "type": "js",
             "extras": {
                 "moduleId": "js/init"
@@ -229,6 +229,12 @@ fis.media('git')
 fis.media('prod')
   .match('**', {
     deploy: fis.plugin('local-deliver', {
-      to: '../dist'
+      to: '../bao-h5/search'
     })
-});
+  })
+  .match('*.html', {
+    deploy: fis.plugin('local-deliver', {
+      to: '../bao-h5'
+    })
+  })
+  

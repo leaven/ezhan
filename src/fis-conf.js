@@ -1,4 +1,4 @@
-fis.set('statics', '/static');
+fis.set('statics', '/search');
 fis.set('tpl', '/page/');
 fis.set('project.ignore', [
   'output/**',
@@ -107,6 +107,12 @@ fis.media('git')
 fis.media('prod')
   .match('**', {
     deploy: fis.plugin('local-deliver', {
-      to: '../dist'
+      to: '../bao-h5/search'
     })
-});
+  })
+  .match('*.html', {
+    deploy: fis.plugin('local-deliver', {
+      to: '../bao-h5'
+    })
+  })
+  
