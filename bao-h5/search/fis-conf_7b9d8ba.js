@@ -29,12 +29,14 @@ fis.match('**/*.less', {
       
   }),
   postprocessor: fis.plugin('autoprefixer'),
+  useHash: true,
   useMap: true
 });
 
 fis.match(/^\/js\/.*\.js$/, {
     isMod: true,
     useMap: true,
+    useHash: true,
     release: '${statics}/js/init.js'
 })
 
@@ -43,23 +45,23 @@ fis.match('::package', {
     // 分析 {
     "res": {
         "css/csslib.less": {
-            "uri": "/css/csslib.css",
+            "uri": "/css/csslib_d41d8cd.css",
             "type": "css"
         },
         "css/index.less": {
-            "uri": "/css/index.css",
+            "uri": "/css/index_447f98f.css",
             "type": "css"
         },
         "css/mipad.less": {
-            "uri": "/css/mipad.css",
+            "uri": "/css/mipad_2bb3376.css",
             "type": "css"
         },
         "css/reset.less": {
-            "uri": "/css/reset.css",
+            "uri": "/css/reset_64b262c.css",
             "type": "css"
         },
         "fis-conf.js": {
-            "uri": "/fis-conf_5957c39.js",
+            "uri": "/fis-conf_7b9d8ba.js",
             "type": "js"
         },
         "lib/mod.js": {

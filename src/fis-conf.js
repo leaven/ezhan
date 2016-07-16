@@ -29,12 +29,14 @@ fis.match('**/*.less', {
       
   }),
   postprocessor: fis.plugin('autoprefixer'),
+  useHash: true,
   useMap: true
 });
 
 fis.match(/^\/js\/.*\.js$/, {
     isMod: true,
     useMap: true,
+    useHash: true,
     release: '${statics}/js/init.js'
 })
 
