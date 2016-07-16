@@ -33,8 +33,9 @@ var Dial = {
 		this.$el = $('.dial');
 		this.$circleWrapper = this.$el.find('.circle-wrapper');
 		this.getSelector();
-		this.getToken();
-		this.getData();
+		this.render();
+		// this.getToken();
+		// this.getData();
 	},
 	bindEvents: function() {
 		$(".dial").on("click", '[ball-event="rotate"]', this.rotate.bind(this));
@@ -109,13 +110,13 @@ var Dial = {
 		var plat = this.getQueryParams(location.search)['plat'] || 0, url;
 		switch(plat) {
 			case '1': 
-				url = '/data/list1.json';
+				url = __uri('/data/list1.json');
 				break;
 			case '2':
-				url = '/data/list2.json';
+				url = __uri('/data/list2.json');
 				break;
 			case '3': 
-				url = '/data/list3.json';
+				url = __uri('/data/list3.json');
 				break;
 			default: 
 				url = 'http://182.92.201.177:8081/queryIndexSearch.do';
@@ -148,8 +149,8 @@ var Dial = {
 			"second": "mid",
 			"third": "small"
 		}
-		console.log(this.tpl({data: data, classMap: classMap}));
-		this.$circleWrapper.html(this.tpl({data: data, classMap: classMap}));
+		// console.log(this.tpl({data: data, classMap: classMap}));
+		// this.$circleWrapper.html(this.tpl({data: data, classMap: classMap}));
 		this.bindEvents();
 	}
 }

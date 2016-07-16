@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>e栈</title>
+	<meta name="viewport" content="user-scalable=no,initial-scale=1,width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="e栈">
+	<link rel="stylesheet" href="/css/reset.less" />
+	<link rel="stylesheet" href="/css/index.less" />
+	<link rel="stylesheet" media="(min-width: 700px) and (max-width: 800px)" href="/css/mipad.less" />
+	<script src="/lib/mod.js"></script>
+	<script src="/lib/flexible.js"></script>
+	
+	<title>E栈</title>
+</head>
+<body>
+	<div class="logo">
+		<div class="logo-img"></div>
+		<p class="logo-title"></p>
+	</div>
+	<div class="dial">
+		<div class="img-container">
+			<img src="./img/big_ball_high.png" />
+			<img src="./img/mid_ball_high.png" />
+			<img src="./img/small_ball_high.png" />
+		</div>
+		<div class="big-circle-bg"></div>
+		<div class="mid-circle-bg"></div>
+		<div class="small-circle-bg"></div>
+		<div class="light"></div>
+		<div class="circle-wrapper"></div>
+		<div class="search" ball-event="search"></div>
+	</div>
+	<div class="shutdown"></div>
+	<a class="go-find" ball-event="find"></a>
+	<!-- <svg id="svg"></svg> -->
+	<script src="/lib/zepto.js"></script>
+	<!-- <script src="/lib/snap.svg.js"></script> -->
+ 	<script>require.resourceMap(__RESOURCE_MAP__)</script>
+    <!--SCRIPT_PLACEHOLDER-->
+	<script>
+		require('/js/init.js');
+		// require('/js/drawSvg.js');
+	</script>
+</body>
+</html>

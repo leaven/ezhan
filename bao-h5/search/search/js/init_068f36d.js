@@ -81,8 +81,9 @@ define('js/init', function(require, exports, module) {
   		this.$el = $('.dial');
   		this.$circleWrapper = this.$el.find('.circle-wrapper');
   		this.getSelector();
-  		this.getToken();
-  		this.getData();
+  		this.render();
+  		// this.getToken();
+  		// this.getData();
   	},
   	bindEvents: function() {
   		$(".dial").on("click", '[ball-event="rotate"]', this.rotate.bind(this));
@@ -196,8 +197,8 @@ define('js/init', function(require, exports, module) {
   			"second": "mid",
   			"third": "small"
   		}
-  		console.log(this.tpl({data: data, classMap: classMap}));
-  		this.$circleWrapper.html(this.tpl({data: data, classMap: classMap}));
+  		// console.log(this.tpl({data: data, classMap: classMap}));
+  		// this.$circleWrapper.html(this.tpl({data: data, classMap: classMap}));
   		this.bindEvents();
   	}
   }
