@@ -148,7 +148,7 @@ var Dial = {
 			"second": "mid",
 			"third": "small"
 		}
-		alert(this.tpl({data: data, classMap: classMap}));
+		console.log(this.tpl({data: data, classMap: classMap}));
 		this.$circleWrapper.html(this.tpl({data: data, classMap: classMap}));
 		this.bindEvents();
 	}

@@ -99,7 +99,7 @@ fis.match('::package', {
             "type": "js"
         },
         "js/init.js": {
-            "uri": "/search/js/init_6ecadca.js",
+            "uri": "/search/js/init_47437bd.js",
             "type": "js",
             "extras": {
                 "moduleId": "js/init"
