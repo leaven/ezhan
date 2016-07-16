@@ -132,7 +132,6 @@ var Dial = {
 				})
 			},
 			success: function(data) {
-				alert(JSON.stringify(data));
 				this.render(data.body);
 			}.bind(this),
 			error: function(msg){
