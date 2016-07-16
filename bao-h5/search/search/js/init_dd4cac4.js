@@ -180,6 +180,7 @@ define('js/init', function(require, exports, module) {
   				})
   			},
   			success: function(data) {
+  				alert(JSON.stringify(data));
   				this.render(data.body);
   			}.bind(this),
   			error: function(msg){
