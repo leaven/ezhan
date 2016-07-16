@@ -70,10 +70,6 @@ fis.match('::package', {
             "uri": "/lib/flexible_2600918.js",
             "type": "js"
         },
-        "lib/zepto.js": {
-            "uri": "/lib/zepto_e4c6ac9.js",
-            "type": "js"
-        },
         "lib/zepto/zepto.js": {
             "uri": "/lib/zepto/zepto_403509d.js",
             "type": "js"
@@ -98,8 +94,12 @@ fis.match('::package', {
             "uri": "/lib/zepto/cookie_4b55a66.js",
             "type": "js"
         },
+        "lib/zepto.js": {
+            "uri": "/lib/zepto_e4c6ac9.js",
+            "type": "js"
+        },
         "js/init.js": {
-            "uri": "/static/js/init_87f95de.js",
+            "uri": "/static/js/init_90c964e.js",
             "type": "js",
             "extras": {
                 "moduleId": "js/init"
