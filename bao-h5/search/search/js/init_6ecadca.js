@@ -180,7 +180,6 @@ define('js/init', function(require, exports, module) {
   				})
   			},
   			success: function(data) {
-  				alert(JSON.stringify(data));
   				this.render(data.body);
   			}.bind(this),
   			error: function(msg){
@@ -197,6 +196,7 @@ define('js/init', function(require, exports, module) {
   			"second": "mid",
   			"third": "small"
   		}
+  		alert(this.tpl({data: data, classMap: classMap}));
   		this.$circleWrapper.html(this.tpl({data: data, classMap: classMap}));
   		this.bindEvents();
   	}
